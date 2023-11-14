@@ -33,7 +33,7 @@ function Footer() {
               </Link>
             </h4>
             <h4>
-              <Link to="/Startups" className="links">
+              <Link to="/Ventures" className="links">
                 Ventures
               </Link>
             </h4>
@@ -64,7 +64,7 @@ function Footer() {
                 name="querytext"
                 id="query-input-text"
                 rows={5}
-                cols={25}
+                cols={20}
               ></textarea>
               <button className="btn-footer" type="submit">
                 Submit

@@ -1,51 +1,52 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 function Signup() {
   const nav = useNavigate();
-  const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [name, setname] = useState("")
-    const onChangeemail = (e) => {
-        setEmail(e.target.value)
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setname] = useState("");
+  const onChangeemail = (e) => {
+    setEmail(e.target.value);
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token") != null) {
+      nav("/");
     }
-    useEffect(() => {
-      if(localStorage.getItem("token")!=null){
-        nav("/");
+  });
+  const onChangepassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const onChangename = (e) => {
+    setname(e.target.value);
+  };
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    const response = await fetch(
+      "http://localhost:5000/api/authorization/signup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: name, email: email, password: password }),
       }
-    });
-    const onChangepassword = (e) => {
-        setPassword(e.target.value)
-    }
-    const onChangename = (e) => {
-        setname(e.target.value)
-    }
-    const handleSignup = async (e) => {
-        e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/authorization/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name: name, email: email, password: password })
+    );
+    const jsonData = await response.json();
+    if (jsonData.success === true) {
+      localStorage.setItem("token", jsonData.authToken);
+      nav("/");
+      window.location.reload();
+    } else {
+      if (jsonData.errors) {
+        jsonData.errors.forEach((error) => {
+          alert(error.msg);
         });
-        const jsonData = await response.json();
-        if (jsonData.success === true) {
-            localStorage.setItem("token", jsonData.authToken)
-            nav("/")
-            window.location.reload()
-        }
-        else {
-            if (jsonData.errors) {
-                jsonData.errors.forEach(error => {
-                    alert(error.msg)
-                });
-            }
-            else{
-                console.log(jsonData.message)
-            }
-        }
+      } else {
+        console.log(jsonData.message);
+      }
     }
+  };
   return (
     <>
       <div className="signup-page">
@@ -54,11 +55,11 @@ function Signup() {
             <img src="VENTURE VAULT-logos.jpeg" alt="Logo" />
           </div>
           <div className="signup-form">
-            <h2>Sign Up</h2>
-            <h4>Start your journey today!</h4>
+            <h2>SIGN UP</h2>
+            <h4>START YOUR JOURNEY TODAY!</h4>
             <form onSubmit={handleSignup}>
               <label htmlFor="signup-input-name" className="label">
-                Name
+                NAME
               </label>
               <input
                 type="text"
@@ -68,7 +69,7 @@ function Signup() {
                 onChange={onChangename}
               />
               <label htmlFor="signup-input" className="label">
-                Email Address
+                EMAIL ADDRESS
               </label>
               <input
                 type="email"
@@ -79,7 +80,7 @@ function Signup() {
               />
 
               <label htmlFor="signup-input-password" className="label">
-                Password
+                PASSWORD
               </label>
               <input
                 type="password"
@@ -100,12 +101,12 @@ function Signup() {
               /> */}
 
               <button className="btn-login" type="submit">
-                Sign Up
+                SIGN UP
               </button>
               <p className="auth-para">
                 Already have an account?
                 <span>
-                  <Link to="/login"> Login </Link>
+                  <Link to="/login"> LOGIN </Link>
                 </span>
               </p>
             </form>

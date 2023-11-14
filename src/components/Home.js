@@ -1,6 +1,7 @@
-import React from 'react';
-import NavBar from './NavBar';
-import Footer from './Footer';
+import React from "react";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
@@ -13,15 +14,60 @@ function Home() {
               "Empowering Dreams, Fueling Innovation"- Your Gateway to Strategic
               Startup Investments
             </h3>
-            <button className="btn-homepage">Get Started</button>
-            <button className="btn-homepage-b1">Know More</button>
+            <Link to="/Ventures">
+              <button className="btn-homepage">GET STARTED</button>
+            </Link>
+            <button className="btn-homepage-b1">KNOW MORE</button>
           </div>
           <div className="right-content">
             <img
-              src="flyer-image.jpg"
+              src="locker-1.png"
               alt="Background"
               className="background-image"
             />
+          </div>
+        </div>
+
+        <div className="trusted-companies">
+          <div>
+            <h1 className="trusted-companies-h1">TRUSTED BY</h1>
+          </div>
+          <div className="grid-content">
+            <div className="row-cols-4">
+              <img
+                src="mastercard.svg"
+                alt="Mastercard.img"
+                className="trusted-companies-img"
+              />
+            </div>
+            <div className="row-cols-4">
+              <img
+                src="forbes.svg"
+                alt="Forbes.img"
+                className="trusted-companies-img"
+              />
+            </div>
+            <div className="row-cols-4">
+              <img
+                src="coinbase.svg"
+                alt="Coinbase.img"
+                className="trusted-companies-img"
+              />
+            </div>
+            <div className="row-cols-4">
+              <img
+                src="emirates.svg"
+                alt="Emirates.img"
+                className="trusted-companies-img"
+              />
+            </div>
+            <div className="row-cols-4">
+              <img
+                src="airbnb.svg"
+                alt="Airbnb.img"
+                className="trusted-companies-img"
+              />
+            </div>
           </div>
         </div>
         <div className="Container">
