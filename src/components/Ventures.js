@@ -90,6 +90,125 @@ export default function Ventures() {
       description:
         "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
     },
+    {
+      id: 5,
+      name: "Stashfin",
+      sector: "Fintech",
+      headquarters: "Delhi NCR",
+      employees: 51000,
+      image: "medibuddy.webp",
+      valuation_range: "$200Mn to $1Bn",
+      revenue_range: "$1Mn to $50Mn",
+      fy22_total_revenue: "$6.03Mn",
+      adjusted_revenue_growth: "223%",
+      YoY_revenue_growth: "423%",
+      YoY_expenditure_growth: "200%",
+      profit_loss_making: "Loss Making",
+      description:
+        "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
+    },
+    {
+      id: 5,
+      name: "Stashfin",
+      sector: "Fintech",
+      headquarters: "Delhi NCR",
+      employees: 51000,
+      image: "medibuddy.webp",
+      valuation_range: "$200Mn to $1Bn",
+      revenue_range: "$1Mn to $50Mn",
+      fy22_total_revenue: "$6.03Mn",
+      adjusted_revenue_growth: "223%",
+      YoY_revenue_growth: "423%",
+      YoY_expenditure_growth: "200%",
+      profit_loss_making: "Loss Making",
+      description:
+        "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
+    },
+    {
+      id: 5,
+      name: "Stashfin",
+      sector: "Fintech",
+      headquarters: "Delhi NCR",
+      employees: 51000,
+      image: "medibuddy.webp",
+      valuation_range: "$200Mn to $1Bn",
+      revenue_range: "$1Mn to $50Mn",
+      fy22_total_revenue: "$6.03Mn",
+      adjusted_revenue_growth: "223%",
+      YoY_revenue_growth: "423%",
+      YoY_expenditure_growth: "200%",
+      profit_loss_making: "Loss Making",
+      description:
+        "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
+    },
+    {
+      id: 5,
+      name: "Stashfin",
+      sector: "Fintech",
+      headquarters: "Delhi NCR",
+      employees: 51000,
+      image: "medibuddy.webp",
+      valuation_range: "$200Mn to $1Bn",
+      revenue_range: "$1Mn to $50Mn",
+      fy22_total_revenue: "$6.03Mn",
+      adjusted_revenue_growth: "223%",
+      YoY_revenue_growth: "423%",
+      YoY_expenditure_growth: "200%",
+      profit_loss_making: "Loss Making",
+      description:
+        "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
+    },
+    {
+      id: 5,
+      name: "Stashfin",
+      sector: "Fintech",
+      headquarters: "Delhi NCR",
+      employees: 51000,
+      image: "medibuddy.webp",
+      valuation_range: "$200Mn to $1Bn",
+      revenue_range: "$1Mn to $50Mn",
+      fy22_total_revenue: "$6.03Mn",
+      adjusted_revenue_growth: "223%",
+      YoY_revenue_growth: "423%",
+      YoY_expenditure_growth: "200%",
+      profit_loss_making: "Loss Making",
+      description:
+        "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
+    },
+    {
+      id: 5,
+      name: "Stashfin",
+      sector: "Fintech",
+      headquarters: "Delhi NCR",
+      employees: 51000,
+      image: "medibuddy.webp",
+      valuation_range: "$200Mn to $1Bn",
+      revenue_range: "$1Mn to $50Mn",
+      fy22_total_revenue: "$6.03Mn",
+      adjusted_revenue_growth: "223%",
+      YoY_revenue_growth: "423%",
+      YoY_expenditure_growth: "200%",
+      profit_loss_making: "Loss Making",
+      description:
+        "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
+    },
+    {
+      id: 5,
+      name: "Stashfin",
+      sector: "Fintech",
+      headquarters: "Delhi NCR",
+      employees: 51000,
+      image: "medibuddy.webp",
+      valuation_range: "$200Mn to $1Bn",
+      revenue_range: "$1Mn to $50Mn",
+      fy22_total_revenue: "$6.03Mn",
+      adjusted_revenue_growth: "223%",
+      YoY_revenue_growth: "423%",
+      YoY_expenditure_growth: "200%",
+      profit_loss_making: "Loss Making",
+      description:
+        "Stashfin is a fintech company dedicated to providing flexible and accessible financial solutions. The company focuses on empowering individuals with innovative credit products and personalized financial services. While experiencing substantial revenue growth, Stashfin is currently operating at a loss, reflecting strategic investments in technology and market expansion.",
+    },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -139,7 +258,11 @@ export default function Ventures() {
                       <p>Team Size: {company.employees}</p>
                     </div>
                     <div>
-                      <button className="vv-btn">View Details</button>
+                      <Link to="/Details">
+                        <button className="btn-special-btn-nav">
+                          View Details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 ))
@@ -153,7 +276,7 @@ export default function Ventures() {
                     <p>Team Size: {company.employees}</p>
                   </div>
                   <div>
-                    <Link>
+                    <Link to="/Details">
                       <button className="btn-special-btn-nav">
                         View Details
                       </button>

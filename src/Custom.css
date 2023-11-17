@@ -753,6 +753,63 @@ svg {
   line-height: 2;
 }
 
+/* DETAILS CSS */
+
+.details-header {
+  text-align: right;
+  margin: 40px;
+}
+
+.details-header .btn-special-btn-nav {
+  color: #4cd4ca;
+  background: #ffffff;
+}
+
+.details-header .btn-special-btn-nav:hover {
+  color: #464543;
+  border: solid #464543;
+}
+
+.details-mid-container {
+  display: flex;
+}
+
+.details-container {
+  margin: 40px 80px 80px 80px;
+}
+
+.details-container h1 {
+  font-size: 3rem;
+}
+.details-descr {
+  width: 60%;
+  text-align: justify;
+}
+.details-descr p {
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.details-descr h2 {
+  text-align: left;
+  text-shadow: none;
+  color: #4cd4ca;
+}
+
+.details-descr-brief {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.details-descr-brief h4 {
+  background: #4cd4ca;
+  color: #ffffff;
+  text-shadow: none;
+  font-weight: 200;
+  border-radius: 10px;
+  padding: 7px;
+}
+
 /* Style each feature element
 .col-md-6 {
   background-color: #f0f0f0; /* Background color for each feature */
