@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Ventures from "./components/Ventures";
 import Faqs from "./components/Faqs";
 import Details from "./components/Details";
+
 function App() {
   return (
     <>

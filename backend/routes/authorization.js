@@ -2,10 +2,11 @@ const express = require("express")
 var bodyParser = require('body-parser')
 const router = express.Router()
 const fetchUser = require("../middlewares/fetchUser")
-const User = require("../models/User")
-const bcrypt = require("bcryptjs")
+const User = require("../models/User")  
+const bcrypt = require("bcryptjs") 
 const jwt = require("jsonwebtoken")
-const JWT_Secret = "Thisisthesecret"
+const JWT_Secret = process.env.JWT_Secret;
+// const JWT_Secret = "Thisisthesecret";
 router.use(express.json())
 // router.post("/some", async(req,res)=>{
 //     return res.json(req.body)
