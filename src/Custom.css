@@ -640,9 +640,9 @@ svg {
   border-radius: 20px;
   margin: 20px 0px;
 }
-
+/* 
 .venture-list {
-}
+} */
 
 .product {
   padding: 10px;
@@ -795,6 +795,10 @@ svg {
   text-shadow: none;
   color: #4cd4ca;
 }
+.details-descr h3,h4 {
+  text-align: left;
+  text-shadow: none;
+}
 
 .details-descr-brief {
   margin: 0px auto;
@@ -810,6 +814,16 @@ svg {
   padding: 7px;
 }
 
+.details-team{
+  display: flex;
+}
+
+.details-team-member{
+  margin-right: 30px;
+}
+.team-details h2{
+  text-align: left !important;
+}
 /* Style each feature element
 .col-md-6 {
   background-color: #f0f0f0; /* Background color for each feature */
@@ -852,3 +866,25 @@ svg {
   height: 500px;
   width: 500px; 
 } */
+
+
+/* Spinners css */
+
+.spinnerContainer { 
+	margin: auto; 
+	width: 50%; 
+	height: 50%; 
+	text-align: center; 
+	position: absolute; 
+	top: 50%; 
+	transform: translate(50%, -50%); 
+	background-color: rgb(255, 255, 255); 
+	display: flex; 
+	align-items: center; 
+  justify-content: center;
+} 
+
+.spinner { 
+	margin: 5%; 
+	padding: 20px; 
+} 

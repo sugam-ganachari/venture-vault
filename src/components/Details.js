@@ -37,7 +37,7 @@ function Details() {
             <p>Less than $200Mn</p>
           </div>
         </div>
-        <div>
+        <div className="team-details">
           <h2>Executive Team</h2>
           <div className="details-team">
             <div className="details-team-member">
