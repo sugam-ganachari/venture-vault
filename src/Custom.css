@@ -721,7 +721,7 @@ svg {
 
 .faq-main-content-div {
   text-align: center;
-  margin: 50px;
+  margin: 100px;
 }
 
 .headingfaq {
@@ -782,7 +782,7 @@ svg {
   font-size: 3rem;
 }
 .details-descr {
-  width: 60%;
+  width: 50%;
   text-align: justify;
 }
 .details-descr p {
@@ -795,7 +795,7 @@ svg {
   text-shadow: none;
   color: #4cd4ca;
 }
-.details-descr h3,h4 {
+h3.details-descr,h4.details-descr {
   text-align: left;
   text-shadow: none;
 }
@@ -811,7 +811,7 @@ svg {
   text-shadow: none;
   font-weight: 200;
   border-radius: 10px;
-  padding: 7px;
+  padding: 10px;
 }
 
 .details-team{
@@ -888,3 +888,12 @@ svg {
 	margin: 5%; 
 	padding: 20px; 
 } 
+
+/* graph Styling */
+.graph_style{
+  height: 400px;
+  width: 700px;
+  margin-top: 30px;
+}
+
+
