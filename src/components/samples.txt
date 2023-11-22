@@ -1,0 +1,47 @@
+<div className="details-descr-brief">
+            <h5>Key Partnerships</h5>
+            <h6>Tech Innovation Inc.</h6>
+            <h6>Global Investments Group</h6>
+          </div>
+          <div className="details-descr-brief">
+            <h5>Contact</h5>
+            <h6>123 Main Street, Delhi NCR, India</h6>
+            <h6>info@stashfin.com</h6>
+          </div>
+
+
+
+
+            <div className="details-descr-brief">
+            <h3>Valuation Details</h3>
+            <h4>Employee Count</h4>
+            <p>5,400</p>
+            <h4>Total Revenue Range</h4>
+            <p>$1Mn to $50Mn</p>
+            <h4>Valuation Range</h4>
+            <p>Less than $200Mn</p>
+            <h4>Fy22 Total Revenue</h4>
+            <p>$6.03Mn</p>
+          </div>
+          <div className="details-descr-brief">
+            <h3>Growth Details</h3>
+            <h4>Adjusted Revenue Growth</h4>
+            <p>223%</p>
+            <h4>FY22 Revenue Growth</h4>
+            <p>423%</p>
+            <h4>Expenditure Growth</h4>
+            <p>200%</p>
+            <h4>Fy22 Total Revenue</h4>
+            <p>$6.03Mn</p>
+          </div>
+          <div className="details-descr-brief">
+            <h3>Debt Details</h3>
+            <h4>Current Debt</h4>
+            <p>$50M</p>
+            <h4>Long Term Debt</h4>
+            <p>$100M</p>
+            <h4>Total Assets</h4>
+            <p>500M</p>
+            <h4>Debt To Equity Ratio</h4>
+            <p>0.5</p>
+          </div>

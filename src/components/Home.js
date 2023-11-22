@@ -74,7 +74,6 @@ function Home() {
           <h1 className="content-h1">ASPECTS</h1>
           <div className="grid-wrap">
             <div className="row-cols-6">
-              <div className="numberings">01.</div>
               <h2>ENGAGEMENT</h2>
               <p className="content-para">
                 The Investment Portfolio Overview encourages users to actively
