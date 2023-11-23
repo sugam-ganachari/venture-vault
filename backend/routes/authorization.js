@@ -84,6 +84,7 @@ router.get("/fetchVentures",async(req,res)=>{
     try{
         const ventures= await ventureDetails.find()
         // ventures= JSON.parse(ventures.data)
+        // console.log(ventures[1])
         return res.send({ventures})
     }
     catch (err){

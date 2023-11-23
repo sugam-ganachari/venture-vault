@@ -2,15 +2,19 @@ import { Link } from "react-router-dom";
 import Graph from "./Graph";
 import DetailsNavbar from "./DetailsNavbar";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-function Details({details}) {
+import { useNavigate,useLocation } from "react-router-dom";
+function Details() {
   const nav= useNavigate();
+  const location = useLocation()
+  const  details  = location.state
   useEffect(()=>{
-    if(details==null){
+    if(!details){
       nav("/");
     }
+  },[details,nav]);
+  if (!details) {
+    return null;
   }
-  )
   return (
     <>
       <div className="details-header">
@@ -19,7 +23,7 @@ function Details({details}) {
         </Link>
       </div>
       <div className="details-container">
-        <h1>{details.name}</h1>
+        <h1><img src={details.image} alt=".img" style={{width: "70px",height:"70px"}}/> {details.name}  </h1>
         <h3>
           <img src="location-pin.png" alt="location.img" /> {details.headquarters}
         </h3>
@@ -88,7 +92,7 @@ function Details({details}) {
         </div>
 
         <div className="graph_style">
-          <Graph />
+          <Graph per={details.adjusted_revenue_growth} />
         </div>
         <div className="details-descr">
           <div className="details-descr-child">

@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Scrollbars from "react-custom-scrollbars";
 // import Spinner from "./Spinner"
 export default function Ventures() {
   const [companies,setCompanies]=useState([])
@@ -15,7 +16,7 @@ export default function Ventures() {
         );
         
         if (response.data.ventures) {
-          const companiesData = response.data.ventures[0].data;
+          const companiesData = response.data.ventures[1].data1;
           setCompanies(companiesData);
           // const uniqueSectors = Array.from(
           //   new Set(companiesData.map((company) => company.sector))
@@ -68,6 +69,9 @@ export default function Ventures() {
             ))}
           </ul>
         </nav>
+
+        <Scrollbars style={{ width: 1000, height: 700}}>
+        
         <div className="venture-list">
           {selectedCategory !== "All"
             ? companies
@@ -82,7 +86,7 @@ export default function Ventures() {
                       <p>Team Size: {company.employees}</p>
                     </div>
                     <div>
-                      <Link to="/Details">
+                      <Link to="/Details" state={{company}}>
                         <button className="btn-special-btn-nav">DETAILS</button>
                       </Link>
                     </div>
@@ -105,6 +109,8 @@ export default function Ventures() {
                 </div>
               ))}
         </div>
+      </Scrollbars>
+
       </div>
       <Footer />
     </>

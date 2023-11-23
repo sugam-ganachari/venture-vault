@@ -630,7 +630,7 @@ svg {
 }
 
 .venture-list {
-  width: 70%;
+  width: 90%;
   position: relative;
   list-style: none;
   z-index: 0;
@@ -656,7 +656,8 @@ svg {
 }
 
 .product img {
-  width: 12%;
+  width: 70px;
+  height: 70px;
   float: left;
   margin: 10px;
 }
@@ -795,6 +796,7 @@ svg {
 }
 .details-descr-child {
   margin-right: 7%;
+  width: 60%;
 }
 .details-descr p {
   line-height: 1.5;
