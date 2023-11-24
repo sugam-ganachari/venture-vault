@@ -18,7 +18,7 @@ const DetailsNavbar = ({ shrprice }) => {
 
   return (
     <div className="details-navbar">
-      <div>Current Share Price: {shrprice} INR</div>
+      <div>Current Market Cap: {shrprice} INR</div>
       <div style={{ display: "flex", alignItems: "center" }}>
         <div style={{}}>
           Quantity:
@@ -30,7 +30,9 @@ const DetailsNavbar = ({ shrprice }) => {
             max="1000"
           />
         </div>
-        <div style={{ margin: 20 }}>Total Price: ${calculateTotalPrice()}</div>
+        <div style={{ margin: 20 }}>
+          Total Price: {calculateTotalPrice()} INR
+        </div>
       </div>
       <div>
         <button className="btn-detailsnavbar" onClick={handleInvestButtonClick}>

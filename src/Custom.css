@@ -494,33 +494,25 @@ svg {
 }
 
 .Container {
-  /* Add spacing around the grid */
-  margin: 50px;
   text-align: center;
-  border-radius: 60px;
-  background: linear-gradient(to right, #000000, #302f30);
-  color: #f3d304;
-  font-family: "Space Mono", monospace;
+  border-radius: 0px 150px 0px 150px;
+  background: #dbe9f4;
+  color: #464543;
 }
 
-.grid-wrap {
-  display: grid;
-  max-width: var(--max-width);
-  margin: 0 auto;
+.flex-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
   width: 100%;
-  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
-
-.row-cols-6 {
-  margin: 40px;
-  border-radius: 30px;
+.flex-wrap-child img {
+  width: 45%;
 }
-
-.row-cols-6:hover {
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(236, 232, 232, 0.2);
-  /* transition: 1s ease-in-out; */
-  transition: 3s cubic-bezier(0.5, 0.5, 0, 1);
+.flex-wrap-child h2 {
+  font-size: 2.2rem;
+  text-align: left;
 }
 
 .numberings {
@@ -529,16 +521,16 @@ svg {
 }
 
 .content-h1 {
-  font-size: 2rem;
+  font-size: 4rem;
   padding-top: 40px;
-  font-family: "Space Mono", monospace;
-  text-shadow: 0.7px 0.7px 2px #f3d304;
+  text-align: left;
+  margin-left: 90px;
 }
 
 .content-para {
   text-align: left;
   margin: 40px 30px 30px 30px;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 /* FOOTER CSS */
@@ -589,11 +581,11 @@ svg {
 }
 
 .links {
-  color: #ffffff;
+  color: #464543;
 }
 
 .links:hover {
-  color: #464543;
+  color: #ffffff;
 }
 
 .footer-copyright {
@@ -796,7 +788,7 @@ svg {
 }
 .details-descr-child {
   margin-right: 7%;
-  width: 60%;
+  width: 100%;
 }
 .details-descr p {
   line-height: 1.5;
@@ -860,7 +852,7 @@ h5 {
 }
 
 span {
-  color: #7b3f00;
+  color: #4cd4ca;
 }
 
 .graph_style {

@@ -8,6 +8,8 @@ import Ventures from "./components/Ventures";
 import Faqs from "./components/Faqs";
 import Details from "./components/Details";
 import DetailsNavbar from "./components/DetailsNavbar";
+import About from "./components/About";
+import Tips from "./components/Tips";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/ventures" element={<Ventures />} />
           <Route path="/Faqs" element={<Faqs />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Tips" element={<Tips />} />
           <Route path="/Details" element={<Details />} />
           <Route path="/Details" element={<DetailsNavbar />} />
         </Routes>

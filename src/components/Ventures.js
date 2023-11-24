@@ -4,11 +4,13 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Scrollbars from "react-custom-scrollbars";
-// import Spinner from "./Spinner"
+import Spinner from "./Spinner";
 export default function Ventures() {
   const [companies, setCompanies] = useState([]);
   const [uniqueSectors, setUniqueSectors] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     async function fetchData() {
       try {
         const response = await axios.get(
@@ -30,8 +32,11 @@ export default function Ventures() {
 
           setSelectedCategory("All");
         }
+        setLoading(false);
       } catch (error) {
         console.error("Error making the request:", error);
+
+        setLoading(false);
       }
     }
 
@@ -72,13 +77,32 @@ export default function Ventures() {
             ))}
           </ul>
         </nav>
-
-        <Scrollbars style={{ width: 1000, height: 700 }}>
-          <div className="venture-list">
-            {selectedCategory !== "All"
-              ? companies
-                  .filter((company) => company.sector === selectedCategory)
-                  .map((company) => (
+        {loading && <Spinner />}
+        {!loading && (
+          <Scrollbars style={{ width: 1000, height: 700 }}>
+            <div className="venture-list">
+              {selectedCategory !== "All"
+                ? companies
+                    .filter((company) => company.sector === selectedCategory)
+                    .map((company) => (
+                      <div className="vv-flex" key={company.id}>
+                        <div className="product">
+                          <img src={company.image} alt={company.name} />
+                          <h3>{company.name}</h3>
+                          <p>Industry: {company.sector}</p>
+                          <p>Headquarters: {company.headquarters}</p>
+                          <p>Team Size: {company.employees}</p>
+                        </div>
+                        <div>
+                          <Link to="/Details" state={{ company }}>
+                            <button className="btn-special-btn-nav">
+                              DETAILS
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+                    ))
+                : companies.map((company) => (
                     <div className="vv-flex" key={company.id}>
                       <div className="product">
                         <img src={company.image} alt={company.name} />
@@ -88,32 +112,17 @@ export default function Ventures() {
                         <p>Team Size: {company.employees}</p>
                       </div>
                       <div>
-                        <Link to="/Details" state={{ company }}>
+                        <Link to="/Details" state={company}>
                           <button className="btn-special-btn-nav">
                             DETAILS
                           </button>
                         </Link>
                       </div>
                     </div>
-                  ))
-              : companies.map((company) => (
-                  <div className="vv-flex" key={company.id}>
-                    <div className="product">
-                      <img src={company.image} alt={company.name} />
-                      <h3>{company.name}</h3>
-                      <p>Industry: {company.sector}</p>
-                      <p>Headquarters: {company.headquarters}</p>
-                      <p>Team Size: {company.employees}</p>
-                    </div>
-                    <div>
-                      <Link to="/Details" state={company}>
-                        <button className="btn-special-btn-nav">DETAILS</button>
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-          </div>
-        </Scrollbars>
+                  ))}
+            </div>
+          </Scrollbars>
+        )}
       </div>
       <Footer />
     </>

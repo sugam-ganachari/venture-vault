@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 import Graph from "./Graph";
 import DetailsNavbar from "./DetailsNavbar";
-import { useEffect } from "react";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 function Details() {
-  const nav= useNavigate();
-  const location = useLocation()
-  const  details  = location.state
-  useEffect(()=>{
-    if(!details){
+  const nav = useNavigate();
+  const location = useLocation();
+  const [details, setDetails] = useState(null);
+
+  useEffect(() => {
+    if (!location.state) {
       nav("/");
+    } else {
+      setDetails(location.state.company || location.state);
     }
-  },[details,nav]);
+  }, [location.state, nav]);
+
   if (!details) {
     return null;
   }
@@ -19,13 +23,14 @@ function Details() {
     <>
       <div className="details-header">
         <Link to="/ventures">
-          <img src="backicon.png" alt="back.img" /> 
+          <img src="backicon.png" alt="back.img" />
         </Link>
       </div>
       <div className="details-container">
-        <h1><img src={details.image} alt=".img" style={{width: "70px",height:"70px"}}/> {details.name}  </h1>
+        <h1> {details.name} </h1>
         <h3>
-          <img src="location-pin.png" alt="location.img" /> {details.headquarters}
+          <img src="location-pin.png" alt="location.img" />{" "}
+          {details.headquarters}
         </h3>
         <div className="details-mid-container">
           <h2>About</h2>
@@ -46,10 +51,11 @@ function Details() {
         <div className="team-details">
           <h2>Executive Team</h2>
           <div className="details-team">
-              {details.executiveMembers.map((execmem,index)=>(
+            {details.executiveMembers &&
+              details.executiveMembers.map((execmem, index) => (
                 <div className="details-team-member" key={index}>
-                <h4>{execmem.name}</h4>
-                <p>{execmem.position}</p>
+                  <h4>{execmem.name}</h4>
+                  <p>{execmem.position}</p>
                 </div>
               ))}
           </div>
@@ -97,18 +103,14 @@ function Details() {
         <div className="details-descr">
           <div className="details-descr-child">
             <h3>Technology and Innovation</h3>
-            <p>
-              {details.technologyAndInnovation}
-            </p>
+            <p>{details.technologyAndInnovation}</p>
           </div>
           <div className="details-descr-child">
             <h3>Key Partnerships</h3>
-            {details.keyPartnerships.map((item,index)=>(
-                <p key={index}>
-                  {item}
-                </p> 
-            ))}
-
+            {details.keyPartnerships &&
+              details.keyPartnerships.map((item, index) => (
+                <p key={index}>{item}</p>
+              ))}
           </div>
         </div>
         <div>
@@ -120,7 +122,7 @@ function Details() {
           </Link>
         </div>
       </div>
-      <DetailsNavbar shrprice={details.shareprice}/>
+      <DetailsNavbar shrprice={details.shareprice} />
     </>
   );
 }
