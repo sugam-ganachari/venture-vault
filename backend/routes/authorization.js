@@ -3,6 +3,7 @@ var bodyParser = require('body-parser')
 const router = express.Router()
 const fetchUser = require("../middlewares/fetchUser")
 const User = require("../models/User")  
+const ventureDetails = require("../models/fetchVentures")  
 const bcrypt = require("bcryptjs") 
 const jwt = require("jsonwebtoken")
 const JWT_Secret = process.env.JWT_Secret;
@@ -76,6 +77,18 @@ router.post("/getuser", fetchUser, async (req, res) => {
     }
     catch (err) {
         return res.status(500).json({ success, message: err.message })
+    }
+})
+
+router.get("/fetchVentures",async(req,res)=>{
+    try{
+        const ventures= await ventureDetails.find()
+        // ventures= JSON.parse(ventures.data)
+        // console.log(ventures[1])
+        return res.send({ventures})
+    }
+    catch (err){
+        return res.status(500).json({message: err.message})
     }
 })
 

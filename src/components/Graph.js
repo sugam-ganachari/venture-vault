@@ -1,15 +1,15 @@
 import React from "react";
 import CanvasJSReact from "@canvasjs/react-charts";
 //var CanvasJSReact = require('@canvasjs/react-charts');
-
 // var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-export default function Graph() {
+export default function Graph({per}) {
+  per = Number(per.replace("%",""))
   const options = {
     animationEnabled: true,
     exportEnabled: true,
-    theme: "light2", // "light1", "dark1", "dark2"
+    theme: "light1",
     title: {
       text: "Venture Revenue Growth FY22",
     },
@@ -20,25 +20,25 @@ export default function Graph() {
     axisX: {
       title: "Months",
       prefix: "M",
-      interval: 12,
+      interval: 1,
     },
     data: [
       {
         type: "line",
         toolTipContent: "Month {x}: {y}%",
         dataPoints: [
-          { x: 1, y: 0 },
-          { x: 2, y: 24 },
-          { x: 3, y: 48 },
-          { x: 4, y: 60 },
-          { x: 5, y: 90 },
-          { x: 6, y: 120 },
-          { x: 7, y: 140 },
-          { x: 8, y: 180 },
-          { x: 9, y: 200 },
-          { x: 10, y: 210 },
-          { x: 11, y: 220 },
-          { x: 12, y: 223 },
+          { x: 1, y: per/12 },
+          { x: 2, y: per/11 },
+          { x: 3, y: per/10 },
+          { x: 4, y: per/9 },
+          { x: 5, y: per/8 },
+          { x: 6, y: per/7 },
+          { x: 7, y: per/6 },
+          { x: 8, y: per/5 },
+          { x: 9, y: per/4 },
+          { x: 10, y: per/3 },
+          { x: 11, y: per/2 },
+          { x: 12, y: per },
         ],
       },
     ],
@@ -49,7 +49,6 @@ export default function Graph() {
         options={options}
         /* onRef={ref => this.chart = ref} */
       />
-      {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
     </div>
   );
 }

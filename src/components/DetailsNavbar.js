@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
-const DetailsNavbar = ({ currentSharePrice }) => {
+const DetailsNavbar = ({ shrprice }) => {
   const [quantity, setQuantity] = useState(1);
-
   const calculateTotalPrice = () => {
-    return quantity * currentSharePrice;
+    return quantity * shrprice;
   };
 
   const handleQuantityChange = (newQuantity) => {
@@ -14,12 +13,12 @@ const DetailsNavbar = ({ currentSharePrice }) => {
   };
 
   const handleInvestButtonClick = () => {
-    console.log(`Investing ${quantity} shares at ${currentSharePrice} each.`);
+    console.log(`Investing ${quantity} shares at ${shrprice} each.`);
   };
 
   return (
     <div className="details-navbar">
-      <div>Current Share Price: {currentSharePrice} INR</div>
+      <div>Current Share Price: {shrprice} INR</div>
       <div style={{ display: "flex", alignItems: "center" }}>
         <div style={{}}>
           Quantity:

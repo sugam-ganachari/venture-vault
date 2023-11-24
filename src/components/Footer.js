@@ -65,6 +65,7 @@ function Footer() {
                 id="query-input-text"
                 rows={5}
                 cols={20}
+                style={{borderRadius:"10px",padding:"10px"}}
               ></textarea>
               <button className="btn-footer" type="submit">
                 Submit
