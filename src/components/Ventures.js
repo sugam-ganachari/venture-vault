@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Scrollbars from "react-custom-scrollbars";
 import Spinner from "./Spinner";
+
 export default function Ventures() {
   const [companies, setCompanies] = useState([]);
   const [uniqueSectors, setUniqueSectors] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize to "All"
+  const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
     setLoading(true);
     async function fetchData() {
@@ -18,24 +22,18 @@ export default function Ventures() {
         );
 
         if (response.data.ventures) {
-          const companiesData = response.data.ventures[1].data1;
+          const companiesData = response.data.ventures[0].data1;
           setCompanies(companiesData);
-          // const uniqueSectors = Array.from(
-          //   new Set(companiesData.map((company) => company.sector))
-          // );
           setUniqueSectors([
             "All",
             ...Array.from(
               new Set(companiesData.map((company) => company.sector))
             ),
           ]);
-
-          setSelectedCategory("All");
         }
         setLoading(false);
       } catch (error) {
         console.error("Error making the request:", error);
-
         setLoading(false);
       }
     }
@@ -43,23 +41,35 @@ export default function Ventures() {
     fetchData();
   }, []);
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  // Get unique sectors
-  // const uniqueSectors = Array.from(
-  //   new Set(companies.map((company) => company.sector))
-  // );
-  // const uniqueSectors = ["All", ...new Set(companies.map((company) => company.sector))];
-
   const handleCategoryClick = (sector) => {
     setSelectedCategory(sector);
   };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredCompanies = companies
+    .filter((company) =>
+      selectedCategory === "All" || company.sector === selectedCategory
+    )
+    .filter((company) =>
+      company.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   return (
     <>
       <NavBar />
       <div className="venture-page">
         <nav className="sidebar-venture">
+        <div className="search-bar" >
+          <input
+            type="text"
+            placeholder="Search by company name"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
           <div className="vv-heading">
             <h1>CATEGORIES</h1>
           </div>
@@ -81,45 +91,22 @@ export default function Ventures() {
         {!loading && (
           <Scrollbars style={{ width: 1000, height: 700 }}>
             <div className="venture-list">
-              {selectedCategory !== "All"
-                ? companies
-                    .filter((company) => company.sector === selectedCategory)
-                    .map((company) => (
-                      <div className="vv-flex" key={company.id}>
-                        <div className="product">
-                          <img src={company.image} alt={company.name} />
-                          <h3>{company.name}</h3>
-                          <p>Industry: {company.sector}</p>
-                          <p>Headquarters: {company.headquarters}</p>
-                          <p>Team Size: {company.employees}</p>
-                        </div>
-                        <div>
-                          <Link to="/Details" state={{ company }}>
-                            <button className="btn-special-btn-nav">
-                              DETAILS
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    ))
-                : companies.map((company) => (
-                    <div className="vv-flex" key={company.id}>
-                      <div className="product">
-                        <img src={company.image} alt={company.name} />
-                        <h3>{company.name}</h3>
-                        <p>Industry: {company.sector}</p>
-                        <p>Headquarters: {company.headquarters}</p>
-                        <p>Team Size: {company.employees}</p>
-                      </div>
-                      <div>
-                        <Link to="/Details" state={company}>
-                          <button className="btn-special-btn-nav">
-                            DETAILS
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
+              {filteredCompanies.map((company) => (
+                <div className="vv-flex" key={company.id}>
+                  <div className="product">
+                    <img src={company.image} alt={company.name} />
+                    <h3>{company.name}</h3>
+                    <p>Industry: {company.sector}</p>
+                    <p>Headquarters: {company.headquarters}</p>
+                    <p>Team Size: {company.employees}</p>
+                  </div>
+                  <div>
+                    <Link to="/Details" state={{ company }}>
+                      <button className="btn-special-btn-nav">DETAILS</button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </Scrollbars>
         )}

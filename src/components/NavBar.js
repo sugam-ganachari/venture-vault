@@ -17,7 +17,9 @@ function NavBar() {
     <>
       <div className="Navcontainer">
         <nav id="desktop-nav">
+          {/* <Link to="/"> */}
           <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" />
+          {/* </Link> */}
           <div>
             <ul className="nav-links">
               <li>
@@ -38,7 +40,9 @@ function NavBar() {
             </ul>
           </div>
           <ul className="right-ul">
+            <Link to="/dashboard">
             <button className="btn-special-btn-nav">DASHBOARD</button>
+            </Link>
             {!localStorage.getItem("token") ? (
               <>
                 <Link to="/login">

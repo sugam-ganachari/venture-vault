@@ -48,6 +48,7 @@ function Login() {
       );
   
       const jsonData = response.data;
+
   
       if (jsonData.success === true) {
         localStorage.setItem("token", jsonData.authToken);
@@ -56,6 +57,7 @@ function Login() {
       } else {
         console.log(jsonData.message);
       }
+      console.log(jsonData.authToken)
     } catch (error) {
       console.error('Error making the request:', error);
     }
@@ -68,6 +70,7 @@ function Login() {
     // } else {
     //   console.log(jsonData.message); 
     // }
+        
 
   };
   return (

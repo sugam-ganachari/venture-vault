@@ -122,9 +122,9 @@ function Details() {
           </Link>
         </div>
       </div>
-      <DetailsNavbar shrprice={details.shareprice} />
+      <DetailsNavbar shrdetails={[details.shareprice,details.id]} />
     </>
-  );
+  ); 
 }
 
 export default Details;

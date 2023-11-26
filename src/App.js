@@ -10,6 +10,7 @@ import Details from "./components/Details";
 import DetailsNavbar from "./components/DetailsNavbar";
 import About from "./components/About";
 import Tips from "./components/Tips";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Tips" element={<Tips />} />
           <Route path="/Details" element={<Details />} />
           <Route path="/Details" element={<DetailsNavbar />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         {/* <Login /> */}
         {/* <Signup /> */}

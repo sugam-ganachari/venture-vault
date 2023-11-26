@@ -6,6 +6,7 @@ const User = require("../models/User")
 const ventureDetails = require("../models/fetchVentures")  
 const bcrypt = require("bcryptjs") 
 const jwt = require("jsonwebtoken")
+const purchase = require("../models/purchase")
 const JWT_Secret = process.env.JWT_Secret;
 // const JWT_Secret = "Thisisthesecret";
 router.use(express.json())
@@ -90,6 +91,64 @@ router.get("/fetchVentures",async(req,res)=>{
     catch (err){
         return res.status(500).json({message: err.message})
     }
+})
+router.get("/fetchVentures/:id", async (req, res) => {
+    const id = req.params.id;
+    try {
+        // const ventures = await ventureDetails.find({
+        //     "data1": {
+        //       $elemMatch: 
+        //       {
+        //         "id": Number(id)
+        //       }
+        //     }
+        //   });
+          const ventures = await ventureDetails.find(
+            { "data1": { $elemMatch: { "id": Number(id) } } },
+            { "data1.$": 1 }
+          );
+      if (!ventures) {
+        return res.status(404).json({ success: false, message: "Data not found" });
+      }
+      return res.status(200).json({ success: true, data: ventures });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+  });
+  
+
+router.get("/fetchPurchases",fetchUser,async(req,res)=>{
+    let success = false
+    try {
+        let id = req.user.id
+        const purchArr = await purchase.find({user: id})
+        success = true
+        return res.status(200).json({ success, purchArr })
+    }
+    catch (err) {
+        return res.status(500).json({ success, message: err.message })
+    }
+})
+
+router.post("/addpurchase", fetchUser, async (req, res) => {
+        let success = false
+        try {
+            const { venture_id,price,quantity } = req.body
+            const pur = new purchase({
+                venture_id, price,quantity, user: req.user.id
+            })
+            const newPurchase = await pur.save()
+            success = true
+            return res.status(200).json({ success, newPurchase })
+        }
+        catch (err) {
+            return res.status(500).json({ success, message: err.message })
+        }
+        // return res.json(req.body)
+    })
+router.post("/test",fetchUser,async(req,res) =>{
+    return res.status(500).json({message:"SUCCESS!!!"})
 })
 
 module.exports = router

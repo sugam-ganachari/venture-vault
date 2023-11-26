@@ -1,6 +1,12 @@
+import axios from "axios";
 import React, { useState } from "react";
-
-const DetailsNavbar = ({ shrprice }) => {
+import { useNavigate } from "react-router-dom";
+// import Spinners from "./Spinner";
+const DetailsNavbar = ({ shrdetails }) => {
+  const shrprice=shrdetails[0]
+  const shrid=shrdetails[1]
+  // console.log(shrid)
+  const nav= useNavigate()
   const [quantity, setQuantity] = useState(1);
   const calculateTotalPrice = () => {
     return quantity * shrprice;
@@ -11,10 +17,35 @@ const DetailsNavbar = ({ shrprice }) => {
       setQuantity(newQuantity);
     }
   };
-
-  const handleInvestButtonClick = () => {
-    console.log(`Investing ${quantity} shares at ${shrprice} each.`);
+  const handleInvestButtonClick = async () => {
+    if (!localStorage.getItem("token")) {
+      nav("/login");
+    } else {
+      window.alert("Purchased");
+      try {
+        const res = await axios.post(
+          "http://localhost:5000/api/authorization/addpurchase",
+          {
+            venture_id: shrid,
+            price: shrprice,
+            quantity: quantity
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "auth-token": localStorage.getItem("token")
+            }
+          }
+        );
+        const responseData = res.data;
+        console.log(responseData);
+        nav("/dashboard");
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
+  
 
   return (
     <div className="details-navbar">
