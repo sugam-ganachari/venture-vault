@@ -48,13 +48,16 @@ function NavBar() {
               <li>
                 <Link to="/Faqs">FAQs</Link>
               </li>
+              <li>
+                <Link to="/dashboard">DASHBOARD</Link>
+              </li>
             </ul>
           </div>
           <ul className="right-ul">
-            <Link to="/dashboard">
+            {/* <Link to="/dashboard">
             <button style={{paddingBottom: "11px",
     paddingTop: "15px"}}className="btn-special-btn-nav">DASHBOARD</button>
-            </Link>
+            </Link> */}
             {!localStorage.getItem("token") ? (
               <>
                 <Link to="/login">
@@ -142,6 +145,9 @@ function NavBar() {
               </li>
               <li>
                 <Link to="/Faqs">FAQs</Link>
+              </li>
+              <li>
+                <Link to="/dashboard">DASHBOARD</Link>
               </li>
             </ul>
           </div>
