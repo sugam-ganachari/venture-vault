@@ -207,9 +207,13 @@ a,
  @media only screen and (max-width: 768px) {
   .signup-page{
     height: 60vh;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
   .login-page{
     height: 60vh;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
  }
 /* NAVBAR CSS */
