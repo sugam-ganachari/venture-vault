@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Scrollbars from "react-custom-scrollbars";
 import Spinner from "./Spinner";
+import HamburgerMenu from "react-hamburger-menu";
 
 export default function Ventures() {
   const [companies, setCompanies] = useState([]);
@@ -12,6 +13,12 @@ export default function Ventures() {
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All"); // Initialize to "All"
   const [searchQuery, setSearchQuery] = useState("");
+
+  const [isOpen1, setIsOpen1] = useState(false);
+
+  const toggleMenu1 = () => {
+    setIsOpen1(!isOpen1);
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -72,8 +79,21 @@ export default function Ventures() {
         </div>
           <div className="vv-heading">
             <h1>CATEGORIES</h1>
+            <div className="hamburger-icon" onClick={toggleMenu1}>
+          <HamburgerMenu
+            isOpen={isOpen1}
+            menuClicked={toggleMenu1}
+            width={18}
+            height={20}
+            strokeWidth={2}
+            rotate={0}
+            color="black"
+            borderRadius={2}
+            animationDuration={1}
+          />
+        </div>
           </div>
-          <ul className="faq-list">
+          <ul className={`faq-list ${isOpen1 ? "open" : ""}`}>
             {uniqueSectors.map((sector) => (
               <li
                 key={sector}
@@ -89,7 +109,8 @@ export default function Ventures() {
         </nav>
         {loading && <Spinner />}
         {!loading && (
-          <Scrollbars style={{ width: 1000, height: 700 }}>
+          <Scrollbars style={{ width: "100%", height: 1000 }}>
+          {/*  <Scrollbars className="scrollbar"> */}
             <div className="venture-list">
               {filteredCompanies.map((company) => (
                 <div className="vv-flex" key={company.id}>

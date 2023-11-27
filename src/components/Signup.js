@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinners from "./Spinner";
 import axios from "axios";
+import Footer from "./Footer";
 function Signup() {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
@@ -148,7 +149,7 @@ function Signup() {
       </div>
     </div>}
     {loading && <Spinners/>}
-      
+      <Footer />
     </>
   );
 }

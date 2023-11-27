@@ -20,10 +20,14 @@ font-family: 'Unica One', sans-serif;
 
 * {
   scroll-behavior: smooth;
+
 }
 
 body {
   font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
 }
 
 /* LOGIN CSS */
@@ -199,7 +203,15 @@ a,
 .btn {
   transition: all 300ms ease;
 }
-
+ /* signup/login responsiveness */
+ @media only screen and (max-width: 768px) {
+  .signup-page{
+    height: 60vh;
+  }
+  .login-page{
+    height: 60vh;
+  }
+ }
 /* NAVBAR CSS */
 
 .nav-logo {
@@ -263,7 +275,9 @@ a,
   background: #4cd4ca;
   border-radius: 20px;
 }
-
+.hamburger-icon{
+  display: none;
+}
 nav img {
   height: 80px;
   width: 90px;
@@ -303,6 +317,50 @@ nav img {
 
 svg {
   margin-left: 0.3rem;
+}
+/* Navbar responsive */
+/* Your existing styles for desktop */
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+  /* navbar responsiveness */
+  #desktop-nav{
+    flex-direction: row;
+    align-items: center;
+    width: 110%;
+    position: static;
+  }
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    /* margin-left: 0px; */
+  }
+  .hamburger-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 15px;
+  }
+  nav.sidebar-venture{
+    margin-top: -75px;
+  }
+  .nav-links-parent{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 45px;
+  }
+  #login-svg{
+    display: none;
+  }
+  .btn-special-btn-nav{
+    padding-top:12px !important;
+    padding-bottom:11px !important;
+  }
 }
 
 /* HAMBURGER MENU
@@ -532,6 +590,29 @@ svg {
   margin: 40px 30px 30px 30px;
   font-size: 1.4rem;
 }
+/* homepage responsivenes */
+/* HOME CSS */
+@media only screen and (max-width: 768px) {
+  .right-content{
+    display: none;
+  }
+  .left-content button{
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .left-content{
+    margin-top: -75px;
+  }
+  .grid-content{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trusted-companies-img {
+    width: 50%;
+}
+.right-ul{
+  padding: 0px;
+}
+}
 
 /* FOOTER CSS */
 
@@ -596,6 +677,13 @@ svg {
 .footer-textarea {
   margin: 20px 10px;
 }
+/* Footer Responsiveness */
+@media only screen and (max-width: 768px) {
+  .grid-wrap-footer{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 
 /* VENTURES CSS */
 .venture-page {
@@ -638,6 +726,8 @@ svg {
   border-radius: 20px;
   margin: 20px 0px;
 }
+
+
 /* 
 .venture-list {
 } */
@@ -751,7 +841,44 @@ svg {
   margin: 10px 0px;
   line-height: 2;
 }
-
+/* ventures responsive */
+@media only screen and (max-width: 768px) {
+  .venture-page{
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  p.product ,h3.product{
+    display: block;
+  }
+  .btn-special-btn-nav{
+    margin-bottom: 10px;
+  }
+  .venture-list{
+    width:105%;
+  }
+  .vv-flex{
+    flex-direction: column;
+    margin-left: 5px;
+  }
+  .sidebar-venture{
+    width: 100%;
+    position: static;
+    height: fit-content;
+  }
+  .faq-list {
+    display: none;
+  }
+  
+  .faq-list.open {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    /* margin-left: 0px; */
+  }
+  .vv-heading{
+    display: flex;
+  }
+}
 /* DETAILS CSS */
 
 .details-header {
@@ -857,6 +984,29 @@ span {
 
 .graph_style {
   margin: 100px auto;
+}
+
+/* details responsiveness */
+@media (max-width: 768px) {
+  .details-container {
+    margin: 0px 20px 0px 25px;
+}
+.details-descr{
+  flex-direction: column;
+}
+  .details-team-member{
+    margin: 10px 10px;
+  }
+  .details-descr-info{
+    flex-direction: column;
+  }
+  .details-navbar{
+    position: static;
+
+  }
+  .detail-bottom{
+    margin-bottom: 200px;
+  }
 }
 
 /* DETAILS-NAVBAR CSS */

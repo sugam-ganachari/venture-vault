@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
+import HamburgerMenu from "react-hamburger-menu";
 function NavBar() {
   // const [log,setLog]=useState("")
   // if(localStorage.getItem("token")!=null){
@@ -8,6 +9,12 @@ function NavBar() {
   // else{
   //   setLog("Logout")
   // }
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   const nav = useNavigate();
   const logout = () => {
     localStorage.removeItem("token");
@@ -15,12 +22,16 @@ function NavBar() {
   };
   return (
     <>
-      <div className="Navcontainer">
+      <div className="Navcontainer" >
         <nav id="desktop-nav">
           {/* <Link to="/"> */}
-          <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" />
+          {/* <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" /> */}
           {/* </Link> */}
-          <div>
+          <div className="nav-logo">
+          <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" />
+        </div>
+          
+          <div className="nav-links-parent">
             <ul className="nav-links">
               <li>
                 <Link to="/">HOME</Link>
@@ -32,7 +43,7 @@ function NavBar() {
                 <Link to="/Tips">TIPS</Link>
               </li>
               <li>
-                <Link to="/About">ABOUT US</Link>
+                <Link to="/test">ABOUT US</Link>
               </li>
               <li>
                 <Link to="/Faqs">FAQs</Link>
@@ -41,7 +52,8 @@ function NavBar() {
           </div>
           <ul className="right-ul">
             <Link to="/dashboard">
-            <button className="btn-special-btn-nav">DASHBOARD</button>
+            <button style={{paddingBottom: "11px",
+    paddingTop: "15px"}}className="btn-special-btn-nav">DASHBOARD</button>
             </Link>
             {!localStorage.getItem("token") ? (
               <>
@@ -49,6 +61,7 @@ function NavBar() {
                   <button className="btn-login-nav">
                     LOGIN
                     <svg
+                      id="login-svg"
                       stroke="currentColor"
                       fill="none"
                       strokeWidth="2"
@@ -94,11 +107,44 @@ function NavBar() {
                     <line x1="15" y1="12" x2="3" y2="12"></line>
                   </svg>
                 </button>
+                
               </>
             )}
+            <div className="hamburger-icon" onClick={toggleMenu}>
+          <HamburgerMenu
+            isOpen={isOpen}
+            menuClicked={toggleMenu}
+            width={24}
+            height={18}
+            strokeWidth={2}
+            rotate={0}
+            color="black"
+            borderRadius={0}
+            animationDuration={0.5}
+          />
+        </div>
           </ul>
         </nav>
       </div>
+      <div className="nav-links-parent">
+            <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+              <li>
+                <Link to="/">HOME</Link>
+              </li>
+              <li>
+                <Link to="/Ventures">VENTURES</Link>
+              </li>
+              <li>
+                <Link to="/Tips">TIPS</Link>
+              </li>
+              <li>
+                <Link to="/test">ABOUT US</Link>
+              </li>
+              <li>
+                <Link to="/Faqs">FAQs</Link>
+              </li>
+            </ul>
+          </div>
     </>
   );
 }

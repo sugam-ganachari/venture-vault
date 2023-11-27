@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import Spinners from "./Spinner"
 import axios from "axios";
+import Footer from "./Footer";
 function Login() {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
@@ -121,6 +122,7 @@ function Login() {
       </div>
     </div>}
       {loading && <Spinners/>}
+      <Footer/>
     </>
   );
 }

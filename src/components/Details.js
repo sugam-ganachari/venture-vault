@@ -113,7 +113,7 @@ function Details() {
               ))}
           </div>
         </div>
-        <div>
+        <div className="detail-bottom">
           <h5>Performance Overview</h5>
           <p>Currently Loss Making</p>
           <h5>Web Link</h5>
