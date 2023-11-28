@@ -772,7 +772,8 @@ svg {
 }
 
 .sidebar-faq {
-  height: 100vh;
+  /* height: 100vh; */
+  margin-top: 30px;
   width: 30%;
   position: sticky;
   left: 0;
@@ -783,6 +784,12 @@ svg {
 }
 
 .faq-list {
+  width: 80%;
+  list-style: none;
+  font-size: 10px;
+  color: #464543;
+}
+.faq-list1 {
   width: 80%;
   list-style: none;
   font-size: 10px;
@@ -799,6 +806,20 @@ svg {
 }
 
 .faq-questions:hover {
+  background: #4cd4ca;
+  color: #ffffff;
+  transition: 0.7s;
+}
+.faq-questions1 {
+  margin: 15px;
+  padding: 12px;
+  border-radius: 15px;
+  color: #b3b0ac;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.faq-questions1:hover {
   background: #4cd4ca;
   color: #ffffff;
   transition: 0.7s;
@@ -872,7 +893,6 @@ svg {
   .faq-list {
     display: none;
   }
-  
   .faq-list.open {
     display: flex;
     flex-direction: column;
@@ -881,6 +901,30 @@ svg {
   }
   .vv-heading{
     display: flex;
+  }
+  .headingfaq{
+    font-size: x-large;
+  }
+  .subheadingfaq{
+    font-size: medium;
+  }
+  li.faq-questions1{
+    font-size: x-small;
+    margin: 5px;
+    padding: 10px;
+  }
+  .main-content{
+    position: static;
+  }
+  .sidebar-faq{
+    height:fit-content;
+  }
+  .question-heading{
+    font-size: medium;
+    margin: 0px;
+  }
+  .faq-para{
+    font-size: x-small;
   }
 }
 /* DETAILS CSS */
@@ -1061,7 +1105,7 @@ span {
   }
 
   .login-container {
-    margin: 60px;
+    margin: 50px 20px 50px 20px;
   }
 
   .login-form {
