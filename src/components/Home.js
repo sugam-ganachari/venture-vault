@@ -78,24 +78,29 @@ function Home() {
             <div className="flex-wrap-child">
               <h2>ENGAGEMENT</h2>
               <p className="content-para">
-                The Investment Portfolio Overview encourages users to actively
-                engage with their investments and the platform, as they can see
-                how their investments are doing at a glance.
+                The Investment Portfolio Overview not only provides a quick
+                snapshot of investment performance but also offers interactive
+                features that encourage users to delve deeper into their
+                portfolio details.
               </p>
             </div>
             <div className="flex-wrap-child">
-              <img src="engagementpic.jpg" alt="engagement.img" />
+              <img src="eng.png" alt="img" />
             </div>
           </div>
           <div className="flex-wrap">
             <div className="flex-wrap-child">
-              <img src="engagementpic.jpg" alt="engagement.img" />
+              <img src="risk.png" alt="img" />
             </div>
             <div className="flex-wrap-child">
               <h2>RISK MANAGEMENT</h2>
               <p className="content-para">
-                Users can assess the performance of their portfolio to identify
-                areas of strength and weakness and make adjustments as needed.
+                In addition to performance evaluation, the platform equips users
+                with risk analysis tools, allowing them to assess the overall
+                risk profile of their portfolio. Through detailed risk metrics,
+                volatility indicators, and scenario analysis, investors can
+                proactively identify potential areas of concern and
+                strategically adjust their holdings.
               </p>
             </div>
           </div>
@@ -103,24 +108,29 @@ function Home() {
             <div className="flex-wrap-child">
               <h2>TRANSPARENCY</h2>
               <p className="content-para">
-                Investors can easily track the performance of their investments
-                in one place, fostering transparency and trust in the platform.
+                The transparency provided by the Investment Portfolio Overview
+                extends beyond performance metrics. The platform offers detailed
+                breakdowns of fees, transaction history, and the underlying
+                assets in the portfolio.
               </p>
             </div>
             <div className="flex-wrap-child">
-              <img src="engagementpic.jpg" alt="engagement.img" />
+              <img src="transparency.png" alt="img" />
             </div>
           </div>
           <div className="flex-wrap">
             <div className="flex-wrap-child">
-              <img src="engagementpic.jpg" alt="engagement.img" />
+              <img src="decision.png" alt="img" />
             </div>
             <div className="flex-wrap-child">
               <h2>INFORMED DECISION-MAKING</h2>
               <p className="content-para">
-                Providing performance data helps investors make informed
-                decisions about whether to continue investing in a particular
-                startup or seek new opportunities.
+                Beyond performance data, the platform equips investors with
+                comprehensive market insights, company updates, and trend
+                analyses. By providing a holistic view of the market landscape,
+                the platform becomes a valuable resource for investors seeking
+                to optimize their portfolio and seize new opportunities as they
+                arise.
               </p>
             </div>
           </div>

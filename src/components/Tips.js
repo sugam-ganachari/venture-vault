@@ -4,7 +4,6 @@ function Tips() {
   return (
     <>
       <NavBar />
-      <Home />
     </>
   );
 }
