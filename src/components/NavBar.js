@@ -27,7 +27,10 @@ function NavBar() {
           {/* <Link to="/"> */}
           {/* <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" /> */}
           {/* </Link> */}
+          {/* <div className="nav-logo"> */}
           <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" />
+          {/* <h3 style={{color:"#4cd4ca"}}>VENTURE VAULT</h3> */}
+          {/* </div> */}
 
           <div className="nav-links-parent">
             <ul className="nav-links">

@@ -63,12 +63,12 @@ const Faqs = () => {
             <h1>FAQs</h1>
           </div>
           <ul
-            className="faq-list"
+            className="faq-list1"
             style={{ textAlign: "left", listStyleType: "none", padding: 0 }}
           >
             {faqData.map((item) => (
               <li
-                className="faq-questions"
+                className="faq-questions1"
                 key={item.id}
                 onClick={() => handleQuestionClick(item.id)}
               >
