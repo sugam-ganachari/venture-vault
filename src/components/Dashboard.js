@@ -8,7 +8,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({});
   const [purchaseDetails, setPurchaseDetails] = useState([]);
-
+  // console.log(localStorage.getItem("token"))
   useEffect(() => {
       if(!localStorage.getItem("token")){
         nav("/login")

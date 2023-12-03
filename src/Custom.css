@@ -206,7 +206,7 @@ a,
  /* signup/login responsiveness */
  @media only screen and (max-width: 768px) {
   .signup-page{
-    height: 60vh;
+    height: fit-content;
     padding-top: 25px;
     padding-bottom: 25px;
   }
@@ -214,6 +214,9 @@ a,
     height: 60vh;
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+  .signup-container{
+    margin:50px 10px 50px 10px;
   }
  }
 /* NAVBAR CSS */
@@ -1119,7 +1122,7 @@ span {
   }
 
   .signup-container {
-    margin: 60px;
+    margin: 50px 10px 50px 10px;
   }
 
   .signup-form {
