@@ -57,8 +57,9 @@ export default function Ventures() {
   };
 
   const filteredCompanies = companies
-    .filter((company) =>
-      selectedCategory === "All" || company.sector === selectedCategory
+    .filter(
+      (company) =>
+        selectedCategory === "All" || company.sector === selectedCategory
     )
     .filter((company) =>
       company.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -69,29 +70,29 @@ export default function Ventures() {
       <NavBar />
       <div className="venture-page">
         <nav className="sidebar-venture">
-        <div className="search-bar" >
-          <input
-            type="text"
-            placeholder="Search by company name"
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-        </div>
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search by company"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+          </div>
           <div className="vv-heading">
             <h1>CATEGORIES</h1>
             <div className="hamburger-icon" onClick={toggleMenu1}>
-          <HamburgerMenu
-            isOpen={isOpen1}
-            menuClicked={toggleMenu1}
-            width={18}
-            height={20}
-            strokeWidth={2}
-            rotate={0}
-            color="black"
-            borderRadius={2}
-            animationDuration={1}
-          />
-        </div>
+              <HamburgerMenu
+                isOpen={isOpen1}
+                menuClicked={toggleMenu1}
+                width={18}
+                height={20}
+                strokeWidth={2}
+                rotate={0}
+                color="black"
+                borderRadius={2}
+                animationDuration={1}
+              />
+            </div>
           </div>
           <ul className={`faq-list ${isOpen1 ? "open" : ""}`}>
             {uniqueSectors.map((sector) => (
@@ -110,7 +111,7 @@ export default function Ventures() {
         {loading && <Spinner />}
         {!loading && (
           <Scrollbars style={{ width: "100%", height: 1000 }}>
-          {/*  <Scrollbars className="scrollbar"> */}
+            {/*  <Scrollbars className="scrollbar"> */}
             <div className="venture-list">
               {filteredCompanies.map((company) => (
                 <div className="vv-flex" key={company.id}>

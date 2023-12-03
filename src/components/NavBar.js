@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import HamburgerMenu from "react-hamburger-menu";
 function NavBar() {
@@ -22,7 +22,7 @@ function NavBar() {
   };
   return (
     <>
-      <div className="Navcontainer" >
+      <div className="Navcontainer">
         <nav id="desktop-nav">
           {/* <Link to="/"> */}
           {/* <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" /> */}
@@ -30,8 +30,8 @@ function NavBar() {
           {/* <div className="nav-logo"> */}
           <img src="../VENTURE VAULT-logos.jpeg" alt="nav-logo" />
           {/* <h3 style={{color:"#4cd4ca"}}>VENTURE VAULT</h3> */}
-        {/* </div> */}
-          
+          {/* </div> */}
+
           <div className="nav-links-parent">
             <ul className="nav-links">
               <li>
@@ -44,7 +44,7 @@ function NavBar() {
                 <Link to="/Tips">TIPS</Link>
               </li>
               <li>
-                <Link to="/test">ABOUT US</Link>
+                <Link to="/About">ABOUT US</Link>
               </li>
               <li>
                 <Link to="/Faqs">FAQs</Link>
@@ -111,47 +111,46 @@ function NavBar() {
                     <line x1="15" y1="12" x2="3" y2="12"></line>
                   </svg>
                 </button>
-                
               </>
             )}
             <div className="hamburger-icon" onClick={toggleMenu}>
-          <HamburgerMenu
-            isOpen={isOpen}
-            menuClicked={toggleMenu}
-            width={24}
-            height={18}
-            strokeWidth={2}
-            rotate={0}
-            color="black"
-            borderRadius={0}
-            animationDuration={0.5}
-          />
-        </div>
+              <HamburgerMenu
+                isOpen={isOpen}
+                menuClicked={toggleMenu}
+                width={24}
+                height={18}
+                strokeWidth={2}
+                rotate={0}
+                color="black"
+                borderRadius={0}
+                animationDuration={0.5}
+              />
+            </div>
           </ul>
         </nav>
       </div>
       <div className="nav-links-parent">
-            <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-              <li>
-                <Link to="/">HOME</Link>
-              </li>
-              <li>
-                <Link to="/Ventures">VENTURES</Link>
-              </li>
-              <li>
-                <Link to="/Tips">TIPS</Link>
-              </li>
-              <li>
-                <Link to="/test">ABOUT US</Link>
-              </li>
-              <li>
-                <Link to="/Faqs">FAQs</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">DASHBOARD</Link>
-              </li>
-            </ul>
-          </div>
+        <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+          <li>
+            <Link to="/">HOME</Link>
+          </li>
+          <li>
+            <Link to="/Ventures">VENTURES</Link>
+          </li>
+          <li>
+            <Link to="/Tips">TIPS</Link>
+          </li>
+          <li>
+            <Link to="/test">ABOUT US</Link>
+          </li>
+          <li>
+            <Link to="/Faqs">FAQs</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">DASHBOARD</Link>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }
