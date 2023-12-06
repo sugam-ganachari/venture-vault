@@ -1,6 +1,8 @@
 import { iconsImgs } from "../../src/utils/images.js";
 
-const Transaction = () => {
+const Transaction = (data1) => {
+  // console.log(data1.data1.purchArr);
+  // const data = data1.data1.purchArr;
   return (
     <div className="grid-two-item grid-common grid-c4">
       <div className="grid-c-title">
@@ -28,11 +30,11 @@ const Transaction = () => {
                 <img src={iconsImgs.check} alt="img" />
               </div>
               <p className="text text-silver-v1">
-                Stashfin <span>11/12/23</span>
+                Indifi <span>23/12/23</span>
               </p>
             </div>
             <div className="grid-item-r">
-              <span className="text-scarlet">13000 INR</span>
+              <span className="text-scarlet">27000 INR</span>
             </div>
           </div>
           <div className="grid-item">
@@ -41,14 +43,33 @@ const Transaction = () => {
                 <img src={iconsImgs.check} alt="img" />
               </div>
               <p className="text text-silver-v1">
-                CRED <span>09/12/23</span>
+                Indifi <span>23/12/23</span>
               </p>
             </div>
             <div className="grid-item-r">
-              <span className="text-scarlet">2000 INR</span>
+              <span className="text-scarlet">27000 INR</span>
             </div>
           </div>
         </div>
+        {/* {data.map((item, index) => (
+          <div className="grid-items" key={index}>
+            <div className="grid-item">
+              <div className="grid-item-l">
+                <div className="icon">
+                  <img src={iconsImgs.check} alt="img" />
+                </div>
+                <p className="text text-silver-v1">
+                  {item.venture_id} <span>{item.date}</span>
+                </p>
+              </div>
+              <div className="grid-item-r">
+                <span className="text-scarlet">
+                  {item.price * item.quantity} INR
+                </span>
+              </div>
+            </div>
+          </div>
+        ))} */}
       </div>
     </div>
   );

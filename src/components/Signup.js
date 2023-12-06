@@ -9,7 +9,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setname] = useState("");
-  const [loading,setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
   const onChangeemail = (e) => {
     setEmail(e.target.value);
   };
@@ -52,14 +52,15 @@ function Signup() {
     //     console.log(jsonData.message);
     //   }
     // }
-    try{
+    try {
       const response = await axios.post(
         "http://localhost:5000/api/authorization/signup",
         { name: name, email: email, password: password },
         {
           headers: {
             "Content-Type": "application/json",
-          }}
+          },
+        }
       );
       const jsonData = await response.data;
       if (jsonData.success === true) {
@@ -76,56 +77,55 @@ function Signup() {
         }
       }
       setLoading(false);
-    }
-    catch (error) {
-      console.error('Error making the request:', error);
+    } catch (error) {
+      console.error("Error making the request:", error);
     }
   };
   return (
     <>
-    {!loading && 
-      <div className="signup-page">
-      <div className="signup-container">
-        <div className="logo-signup">
-          <img src="VENTURE VAULT-logos.jpeg" alt="Logo" />
-        </div>
-        <div className="signup-form">
-          <h2>SIGN UP</h2>
-          <h4>START YOUR JOURNEY TODAY!</h4>
-          <form onSubmit={handleSignup}>
-            <label htmlFor="signup-input-name" className="label">
-              NAME
-            </label>
-            <input
-              type="text"
-              className="signup-input"
-              id="signup-input-name" 
-              required
-              onChange={onChangename}
-            />
-            <label htmlFor="signup-input" className="label">
-              EMAIL ADDRESS
-            </label>
-            <input
-              type="email"
-              className="signup-input"
-              id="signup-input"
-              required
-              onChange={onChangeemail}
-            />
+      {!loading && (
+        <div className="signup-page">
+          <div className="signup-container">
+            <div className="logo-signup">
+              <img src="VENTURE VAULT-logos.jpeg" alt="Logo" />
+            </div>
+            <div className="signup-form">
+              <h2>SIGN UP</h2>
+              <h4>START YOUR JOURNEY TODAY!</h4>
+              <form onSubmit={handleSignup}>
+                <label htmlFor="signup-input-name" className="label">
+                  NAME
+                </label>
+                <input
+                  type="text"
+                  className="signup-input"
+                  id="signup-input-name"
+                  required
+                  onChange={onChangename}
+                />
+                <label htmlFor="signup-input" className="label">
+                  EMAIL ADDRESS
+                </label>
+                <input
+                  type="email"
+                  className="signup-input"
+                  id="signup-input"
+                  required
+                  onChange={onChangeemail}
+                />
 
-            <label htmlFor="signup-input-password" className="label">
-              PASSWORD
-            </label>
-            <input
-              type="password"
-              className="signup-input"
-              id="signup-input-password"
-              onChange={onChangepassword}
-              required
-            />
+                <label htmlFor="signup-input-password" className="label">
+                  PASSWORD
+                </label>
+                <input
+                  type="password"
+                  className="signup-input"
+                  id="signup-input-password"
+                  onChange={onChangepassword}
+                  required
+                />
 
-            {/* <label htmlFor="signup-confirm-password" className="label">
+                {/* <label htmlFor="signup-confirm-password" className="label">
               Confirm Password
             </label>
             <input
@@ -135,20 +135,21 @@ function Signup() {
               required
             /> */}
 
-            <button className="btn-login" type="submit">
-              SIGN UP
-            </button>
-            <p className="auth-para">
-              Already have an account?
-              <span>
-                <Link to="/login"> LOGIN </Link>
-              </span>
-            </p>
-          </form>
+                <button className="btn-login" type="submit">
+                  SIGN UP
+                </button>
+                <p className="auth-para">
+                  Already have an account?
+                  <span>
+                    <Link to="/login"> LOGIN </Link>
+                  </span>
+                </p>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>}
-    {loading && <Spinners/>}
+      )}
+      {loading && <Spinners />}
       <Footer />
     </>
   );

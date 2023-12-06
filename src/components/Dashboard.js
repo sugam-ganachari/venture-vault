@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Collection from "./Collection";
 import Cards from "./Cards";
 import Userinfo from "./Userinfo";
+import Reports from "./Reports";
 
 export default function Dashboard() {
   const nav = useNavigate();
@@ -121,10 +122,12 @@ export default function Dashboard() {
           <div className="content-grid-one">
             <Cards />
             <Cards />
+
             <Userinfo />
           </div>
           <div className="content-grid-two">
             <Transaction />
+
             <Collection />
           </div>
         </div>
