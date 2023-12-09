@@ -27,8 +27,24 @@ function About() {
           </p>
         </div>
         <div className="about-midcontainer">
-          <img src="aboutimg.jpg" alt="img" />
-          <div></div>
+          <img src="copywriting.png" alt="img" />
+
+          <p>
+            Venture Vault is an innovative online platform reshaping the
+            landscape of startup investments. With a curated list of startups
+            accompanied by detailed profiles and quarterly performance
+            analytics, investors gain unprecedented insights. What sets Venture
+            Vault apart is its unique "Negotiating Rooms," allowing direct
+            communication between investors and startups for personalized
+            negotiation. The platform also serves as an educational hub,
+            providing investors with market trends, risk assessment strategies,
+            and best practices. Built on the MERN stack, Venture Vault ensures a
+            responsive and scalable experience. By blending digital convenience
+            with traditional negotiation spaces, the platform aims to
+            democratize access to startup information, foster collaboration, and
+            empower investors to make informed decisions in the dynamic realm of
+            startup investments.
+          </p>
         </div>
       </div>
       <Footer />

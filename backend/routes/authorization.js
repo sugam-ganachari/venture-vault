@@ -147,6 +147,19 @@ router.post("/addpurchase", fetchUser, async (req, res) => {
         }
         // return res.json(req.body)
     })
+router.post("/sellpurchase", fetchUser, async (req, res) => {
+        const { venture_id,date} = req.body
+        let success = false
+        try {
+            const sell = await purchase.deleteOne({venture_id: venture_id,date:date})
+            success = true
+            return res.status(200).json({ success ,sell })
+        }
+        catch (err) {
+            return res.status(500).json({ success, message: err.message })
+        }
+        // return res.json(req.body)
+    })
 router.post("/test",fetchUser,async(req,res) =>{
     return res.status(500).json({message:"SUCCESS!!!"})
 })

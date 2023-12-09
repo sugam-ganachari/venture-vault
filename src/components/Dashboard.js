@@ -5,10 +5,9 @@ import { useNavigate } from "react-router-dom";
 import Transaction from "./Transaction";
 import { iconsImgs } from "../utils/images";
 import { Link } from "react-router-dom";
-import Collection from "./Collection";
-import Cards from "./Cards";
-import Userinfo from "./Userinfo";
-import Reports from "./Reports";
+// import Collection from "./Collection";
+// import Cards from "./Cards";
+// import Userinfo from "./Userinfo";
 
 export default function Dashboard() {
   const nav = useNavigate();
@@ -58,7 +57,7 @@ export default function Dashboard() {
         return;
       }
       for (let i = 0; i < ids.length; i++) {
-        console.log(ids[i].venture_id);
+        // console.log(ids[i].venture_id);
         const id = ids[i].venture_id;
         // console.log(ids[i])
         try {
@@ -81,17 +80,17 @@ export default function Dashboard() {
       setPurchaseDetails(purchaseDetailsArray);
     }
     fetchData();
+    // fetchPurchaseDetails(data.purchArr);
   }, [nav]);
 
-  console.log(data);
+  // console.log(data);
   //   console.log(purchaseDetails);
-  purchaseDetails.forEach((innerArray) => {
-    const data1Array = innerArray[0].data1;
-    console.log(data1Array[0]);
-  });
-
-  const [currentDate, setCurrentDate] = useState(getDate());
-
+  // purchaseDetails.forEach((innerArray) => {
+  //   const data1Array = innerArray[0].data1;
+  //   // console.log(data1Array[0]);
+  // });
+  // console.log("Purchase Details:", purchaseDetails);
+  const currentDate = useState(getDate());
   return (
     <>
       {!loading && (
@@ -103,7 +102,7 @@ export default function Dashboard() {
             <Link to="/">
               <img src="backicon-grey.png" alt="back.img" />
             </Link>
-            <div className="date">
+            <div className="date" style={{ marginTop: "15px" }}>
               <h4>TODAY IS</h4>
               <p>{currentDate}</p>
             </div>
@@ -119,16 +118,15 @@ export default function Dashboard() {
             <img src={iconsImgs.user} alt="img" />
             <h1>DASHBOARD</h1>
           </div>
-          <div className="content-grid-one">
+          {/* <div className="content-grid-one">
             <Cards />
             <Cards />
 
             <Userinfo />
-          </div>
+          </div> */}
           <div className="content-grid-two">
-            <Transaction />
-
-            <Collection />
+            <Transaction data={data} purchdata={purchaseDetails} />
+            {/* <Collection data={data} purchdata={purchaseDetails} /> */}
           </div>
         </div>
       )}

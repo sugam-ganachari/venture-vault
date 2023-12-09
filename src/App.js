@@ -9,7 +9,6 @@ import Faqs from "./components/Faqs";
 import Details from "./components/Details";
 import DetailsNavbar from "./components/DetailsNavbar";
 import About from "./components/About";
-import Tips from "./components/Tips";
 import Dashboard from "./components/Dashboard";
 // import NavBar from "./components/NavBar";
 
@@ -25,11 +24,9 @@ function App() {
           <Route path="/ventures" element={<Ventures />} />
           <Route path="/Faqs" element={<Faqs />} />
           <Route path="/About" element={<About />} />
-          <Route path="/Tips" element={<Tips />} />
           <Route path="/Details" element={<Details />} />
           <Route path="/Details" element={<DetailsNavbar />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/test" element={<Tips />} />
         </Routes>
         {/* <Login /> */}
         {/* <Signup /> */}

@@ -37,11 +37,7 @@ function Footer() {
                 Ventures
               </Link>
             </h4>
-            <h4>
-              <Link to="/Tips" className="links">
-                Tips
-              </Link>
-            </h4>
+
             <h4>
               <Link to="/About" className="links">
                 About Us
@@ -65,7 +61,7 @@ function Footer() {
                 id="query-input-text"
                 rows={5}
                 cols={20}
-                style={{borderRadius:"10px",padding:"10px"}}
+                style={{ borderRadius: "10px", padding: "10px" }}
               ></textarea>
               <button className="btn-footer" type="submit">
                 Submit

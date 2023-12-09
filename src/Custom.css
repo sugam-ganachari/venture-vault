@@ -205,14 +205,18 @@ a,
 /* signup/login responsiveness */
 @media only screen and (max-width: 768px) {
   .signup-page {
-    height: 60vh;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    height: fit-content;
   }
-  .login-page {
-    height: 60vh;
-    padding-top: 25px;
-    padding-bottom: 25px;
+  /* signup/login responsiveness */
+  @media only screen and (max-width: 768px) {
+    .login-page {
+      height: 60vh;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+    .signup-container {
+      margin: 50px 10px 50px 10px;
+    }
   }
 }
 /* NAVBAR CSS */
@@ -1145,10 +1149,19 @@ span {
 .about-midcontainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 20px 60px;
+}
+.about-midcontainer div {
+  width: 50%;
 }
 .about-midcontainer img {
-  border-radius: 30px;
-  width: 40%;
+  float: left;
+}
+.about-midcontainer p {
+  padding: 30px 50px;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
 /* Media query for screens up to 768px wide */
@@ -1172,7 +1185,7 @@ span {
   }
 
   .signup-container {
-    margin: 60px;
+    margin: 50px 10px 50px 10px;
   }
 
   .signup-form {

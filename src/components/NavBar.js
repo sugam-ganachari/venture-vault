@@ -41,9 +41,6 @@ function NavBar() {
                 <Link to="/Ventures">VENTURES</Link>
               </li>
               <li>
-                <Link to="/Tips">TIPS</Link>
-              </li>
-              <li>
                 <Link to="/About">ABOUT US</Link>
               </li>
               <li>
